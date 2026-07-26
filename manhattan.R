@@ -9,12 +9,12 @@ p1 <- com.args[1]
 g <- com.args[2]
 
 prep.Mant.f <- function(te.mat){
-        sum.info <- read.table("./manh.sum.info",sep='\t',header=F)
-        rownames(sum.info) <- sum.info[,1]
-        te.mat <- cbind(te.mat,tot=sum.info[te.mat[,"CHR"],2])
-        te.mat <- cbind(te.mat,BPcum=te.mat[,"BP"] + te.mat[,"tot"])
-        rev.te.mat <- te.mat
-        return (rev.te.mat)
+	sum.info <- read.table("./manh.sum.info",sep='\t',header=F)
+    rownames(sum.info) <- sum.info[,1]
+    te.mat <- cbind(te.mat,tot=sum.info[te.mat[,"CHR"],2])
+    te.mat <- cbind(te.mat,BPcum=te.mat[,"BP"] + te.mat[,"tot"])
+    rev.te.mat <- te.mat
+    return (rev.te.mat)
 }
 
 read.f <- function(te.p){
